@@ -1,4 +1,9 @@
 Green::Application.routes.draw do
+  root :to => 'ingredients#index'
+  get "ingredients/index"
+
+  get "ingredients/show"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

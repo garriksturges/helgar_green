@@ -1,0 +1,10 @@
+%h1 Ingredients
+%table
+  %tr
+    %th Name
+    %th Variety 
+  - @ingredients.each do |i|
+    %tr
+      %td= i.name
+      %td= i.variety
+      %td= i.description
