@@ -1,3 +1,4 @@
 class Ingredient < ActiveRecord::Base
-  validates_presence_of :name, :variety
+  has_many :parts
+  validates_presence_of :name#, user_id
 end
