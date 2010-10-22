@@ -3,5 +3,13 @@
   %head
     %title Green: Ingredients
   %body
-  
+    %ul
+      = render 'devise/login_items'
+      = render 'devise/registration_items'
+    %p 
+      .notice
+        = notice 
+    %p 
+      .alert
+        = alert 
   = yield
