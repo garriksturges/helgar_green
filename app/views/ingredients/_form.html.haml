@@ -1,0 +1,4 @@
+= simple_form_for @ingredient do |f|
+  = f.input :name, :label => "Ingredient Name"
+  = f.input :variety, :collection => ["Green", "Fruit", "Vegetable", "Other"]
+  = f.button :submit

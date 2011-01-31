@@ -1,10 +1,21 @@
-%h1 Ingredients
-%table
+%h1 Listing ingredients
+
+%table{:border => 1}
   %tr
-    %th Name
-    %th Variety 
+    %th Ingredient Name
+    %th Variety
+    %th Who added it
+    %th User Id
+
   - @ingredients.each do |i|
     %tr
-      %td= i.name
-      %td= i.variety
-      %td= i.description
+      %td
+        = i.name
+      %td
+        = i.variety
+      %td
+        = i.user.email
+      %td
+        = i.user.id
+
+= link_to 'New Ingredient', new_ingredient_path

@@ -1,12 +1,12 @@
 class IngredientsController < ApplicationController
   # GET /ingredients
   # GET /ingredients.xml
+  before_filter :authenticate_user!, :except=> [:index, :show]
   def index
     @ingredients = Ingredient.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @ingredients }
     end
   end
 
@@ -17,7 +17,6 @@ class IngredientsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @ingredient }
     end
   end
 
@@ -25,10 +24,8 @@ class IngredientsController < ApplicationController
   # GET /ingredients/new.xml
   def new
     @ingredient = Ingredient.new
-
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @ingredient }
     end
   end
 
@@ -41,14 +38,12 @@ class IngredientsController < ApplicationController
   # POST /ingredients.xml
   def create
     @ingredient = Ingredient.new(params[:ingredient])
-
+    @ingredient.user_id = current_user.id
     respond_to do |format|
       if @ingredient.save
         format.html { redirect_to(@ingredient, :notice => 'Ingredient was successfully created.') }
-        format.xml  { render :xml => @ingredient, :status => :created, :location => @ingredient }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @ingredient.errors, :status => :unprocessable_entity }
       end
     end
   end

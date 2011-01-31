@@ -1,4 +1,5 @@
 class PartsController < ApplicationController
+   before_filter :authenticate_user!, :except=> [:index, :show]
   # GET /parts
   # GET /parts.xml
   def index

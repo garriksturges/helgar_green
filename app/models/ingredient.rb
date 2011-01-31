@@ -1,4 +1,7 @@
 class Ingredient < ActiveRecord::Base
+  belongs_to :user
   has_many :parts
-  validates_presence_of :name#, user_id
+  has_many :recipes, :through => :parts
+  validates_presence_of :name, :variety
+  validates_inclusion_of :variety, :in =>["Green", "Fruit", "Vegetable", "Other"]
 end

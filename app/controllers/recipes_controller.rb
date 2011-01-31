@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_filter :authenticate_user!, :except=> :index 
+   before_filter :authenticate_user!, :except=> [:index, :show] 
   # GET /recipes
   # GET /recipes.xml
   def index
@@ -7,10 +7,13 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @recipes }
     end
   end
-
+  
+  def addPart
+  end
+  
+  
   # GET /recipes/1
   # GET /recipes/1.xml
   def show
@@ -18,7 +21,6 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @recipe }
     end
   end
 
@@ -26,10 +28,9 @@ class RecipesController < ApplicationController
   # GET /recipes/new.xml
   def new
     @recipe = Recipe.new
-
+    @recipe.parts.build
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @recipe }
     end
   end
 
@@ -46,10 +47,8 @@ class RecipesController < ApplicationController
     respond_to do |format|
       if @recipe.save
         format.html { redirect_to(@recipe, :notice => 'Recipe was successfully created.') }
-        format.xml  { render :xml => @recipe, :status => :created, :location => @recipe }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @recipe.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -62,10 +61,8 @@ class RecipesController < ApplicationController
     respond_to do |format|
       if @recipe.update_attributes(params[:recipe])
         format.html { redirect_to(@recipe, :notice => 'Recipe was successfully updated.') }
-        format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @recipe.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -78,7 +75,6 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(recipes_url) }
-      format.xml  { head :ok }
     end
   end
 end
