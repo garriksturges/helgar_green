@@ -4617,3 +4617,30 @@ Rendered devise/_login_items.html.haml (2.0ms)
 Rendered devise/_registration_items.html.haml (2.1ms)
 Rendered recipes/new.html.haml within layouts/application (23.9ms)
 Completed 200 OK in 125ms (Views: 29.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-02-01 18:52:23 -0800
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT "recipes".* FROM "recipes"
+Rendered devise/_login_items.html.haml (2.4ms)
+Rendered devise/_registration_items.html.haml (25.3ms)
+Rendered recipes/index.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 150ms (Views: 64.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-01 18:52:26 -0800
+  Processing by RecipesController#new as HTML
+Completed   in 11ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-02-01 18:52:27 -0800
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/devise-1.1.5/app/views/devise/shared/_links.erb (1.1ms)
+Rendered devise/_login_items.html.haml (1.9ms)
+Rendered devise/_registration_items.html.haml (1.6ms)
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/devise-1.1.5/app/views/devise/sessions/new.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 43ms (Views: 19.7ms | ActiveRecord: 0.0ms)
