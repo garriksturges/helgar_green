@@ -28,7 +28,7 @@ class RecipesController < ApplicationController
   # GET /recipes/new.xml
   def new
     @recipe = Recipe.new
-    @recipe.parts.build
+    3.times{ @recipe.parts.build}
     respond_to do |format|
       format.html # new.html.erb
     end

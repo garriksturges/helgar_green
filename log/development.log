@@ -4644,3 +4644,462 @@ Rendered devise/_login_items.html.haml (1.9ms)
 Rendered devise/_registration_items.html.haml (1.6ms)
 Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/devise-1.1.5/app/views/devise/sessions/new.html.erb within layouts/application (14.7ms)
 Completed 200 OK in 43ms (Views: 19.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-02-02 18:50:55 -0800
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (25.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT "recipes".* FROM "recipes"
+Rendered devise/_login_items.html.haml (2.3ms)
+Rendered devise/_registration_items.html.haml (25.3ms)
+Rendered recipes/index.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 174ms (Views: 41.1ms | ActiveRecord: 25.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-02-02 18:52:28 -0800
+  Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+Rendered devise/_login_items.html.haml (14.3ms)
+Rendered devise/_registration_items.html.haml (1.8ms)
+Rendered recipes/index.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 38ms (Views: 26.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-02 18:52:31 -0800
+  Processing by RecipesController#new as HTML
+Completed   in 10ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-02-02 18:52:31 -0800
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/devise-1.1.5/app/views/devise/shared/_links.erb (1.2ms)
+Rendered devise/_login_items.html.haml (2.3ms)
+Rendered devise/_registration_items.html.haml (2.2ms)
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/devise-1.1.5/app/views/devise/sessions/new.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 85ms (Views: 22.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2011-02-02 18:52:46 -0800
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vMR9wiMHgVvNrQRdDfzxKdzLyBJ4zdSf2P/ZMr/r3NE=", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = 'test@test.com') LIMIT 1
+Completed   in 20ms
+  Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vMR9wiMHgVvNrQRdDfzxKdzLyBJ4zdSf2P/ZMr/r3NE=", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/devise-1.1.5/app/views/devise/shared/_links.erb (1.2ms)
+Rendered devise/_login_items.html.haml (1.7ms)
+Rendered devise/_registration_items.html.haml (1.4ms)
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/devise-1.1.5/app/views/devise/sessions/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 148ms (Views: 18.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2011-02-02 18:52:49 -0800
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/devise-1.1.5/app/views/devise/shared/_links.erb (1.3ms)
+Rendered devise/_login_items.html.haml (1.8ms)
+Rendered devise/_registration_items.html.haml (1.5ms)
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/devise-1.1.5/app/views/devise/registrations/new.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 68ms (Views: 54.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-02-02 18:53:00 -0800
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vMR9wiMHgVvNrQRdDfzxKdzLyBJ4zdSf2P/ZMr/r3NE=", "user"=>{"email"=>"arf@arf.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('arf@arf.com')) LIMIT 1[0m
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/devise-1.1.5/app/views/devise/shared/_links.erb (1.1ms)
+Rendered devise/_login_items.html.haml (1.7ms)
+Rendered devise/_registration_items.html.haml (1.7ms)
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/devise-1.1.5/app/views/devise/registrations/new.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 169ms (Views: 18.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-02-02 18:53:08 -0800
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/devise-1.1.5/app/views/devise/shared/_links.erb (1.2ms)
+Rendered devise/_login_items.html.haml (1.8ms)
+Rendered devise/_registration_items.html.haml (1.5ms)
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/devise-1.1.5/app/views/devise/sessions/new.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 70ms (Views: 49.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2011-02-02 18:53:14 -0800
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vMR9wiMHgVvNrQRdDfzxKdzLyBJ4zdSf2P/ZMr/r3NE=", "user"=>{"email"=>"arf@arf.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = 'arf@arf.com') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2011-02-03 02:53:14.931014', "last_sign_in_at" = '2011-02-02 00:01:32.435938', "sign_in_count" = 4, "updated_at" = '2011-02-03 02:53:14.931458' WHERE ("users"."id" = 1)[0m
+Redirected to http://localhost:3000/recipes/new
+Completed 302 Found in 143ms
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-02 18:53:14 -0800
+  Processing by RecipesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered recipes/_form.html.erb (77.1ms)
+Rendered devise/_login_items.html.haml (1.8ms)
+Rendered devise/_registration_items.html.haml (1.6ms)
+Rendered recipes/new.html.erb within layouts/application (87.3ms)
+Completed 200 OK in 173ms (Views: 91.6ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2011-02-02 18:53:17 -0800
+  Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vMR9wiMHgVvNrQRdDfzxKdzLyBJ4zdSf2P/ZMr/r3NE=", "commit"=>"Create Recipe"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered recipes/_form.html.erb (30.8ms)
+Rendered devise/_login_items.html.haml (1.6ms)
+Rendered devise/_registration_items.html.haml (1.4ms)
+Rendered recipes/new.html.erb within layouts/application (40.8ms)
+Completed 200 OK in 85ms (Views: 44.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-02-02 18:53:22 -0800
+  Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.5ms)[0m  SELECT "recipes".* FROM "recipes"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered devise/_login_items.html.haml (60.6ms)
+Rendered devise/_registration_items.html.haml (1.6ms)
+Rendered recipes/index.html.erb within layouts/application (68.5ms)
+Completed 200 OK in 83ms (Views: 71.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-02 18:53:24 -0800
+  Processing by RecipesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered recipes/_form.html.erb (1.7ms)
+Rendered devise/_login_items.html.haml (1.6ms)
+Rendered devise/_registration_items.html.haml (1.8ms)
+Rendered recipes/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 96ms (Views: 15.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-02 18:54:04 -0800
+  Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered recipes/_form.html.erb (1.7ms)
+Rendered devise/_login_items.html.haml (1.6ms)
+Rendered devise/_registration_items.html.haml (1.4ms)
+Rendered recipes/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 126ms (Views: 15.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-02 18:54:05 -0800
+  Processing by RecipesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered recipes/_form.html.erb (1.7ms)
+Rendered devise/_login_items.html.haml (1.8ms)
+Rendered devise/_registration_items.html.haml (1.5ms)
+Rendered recipes/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 103ms (Views: 15.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-02 18:54:08 -0800
+  Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered recipes/_form.html.erb (1.8ms)
+Rendered devise/_login_items.html.haml (1.6ms)
+Rendered devise/_registration_items.html.haml (1.4ms)
+Rendered recipes/new.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 124ms (Views: 15.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-02 18:54:09 -0800
+  Processing by RecipesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered recipes/_form.html.erb (1.7ms)
+Rendered devise/_login_items.html.haml (1.6ms)
+Rendered devise/_registration_items.html.haml (1.4ms)
+Rendered recipes/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 97ms (Views: 14.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-02 18:55:03 -0800
+  Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered recipes/_form.html.erb (2.0ms)
+Rendered devise/_login_items.html.haml (1.6ms)
+Rendered devise/_registration_items.html.haml (1.5ms)
+Rendered recipes/new.html.haml within layouts/application (12.5ms)
+Completed 200 OK in 127ms (Views: 16.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-02 18:55:18 -0800
+  Processing by RecipesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from block in _app_views_recipes__form_html_haml___2197666514211384227_2158433580__88410033945575408 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:5)
+Rendered recipes/_form.html.haml (195.4ms)
+Rendered recipes/new.html.haml within layouts/application (197.5ms)
+Completed   in 285ms
+
+ActionView::Template::Error (undefined method `button' for #<ActionView::Helpers::FormBuilder:0x0000010141f260>):
+    6:     = p.label :amount
+    7:     = p.text_field  :amount
+    8:   
+    9:   = f.button :submit
+  app/views/recipes/_form.html.haml:9:in `block in _app_views_recipes__form_html_haml___2197666514211384227_2158433580__88410033945575408'
+  app/views/recipes/_form.html.haml:1:in `_app_views_recipes__form_html_haml___2197666514211384227_2158433580__88410033945575408'
+  app/views/recipes/new.html.haml:3:in `_app_views_recipes_new_html_haml__4447828459553625693_2158484820_4493482825911179709'
+  app/controllers/recipes_controller.rb:32:in `new'
+
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (72.5ms)
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (78.0ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-02 18:55:49 -0800
+  Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from block in _app_views_recipes__form_html_haml___2197666514211384227_2173520400__88410033945575408 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:5)
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_recipes__form_html_haml___2197666514211384227_2173520400__88410033945575408 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:1)
+Rendered recipes/_form.html.haml (5.5ms)
+Rendered devise/_login_items.html.haml (1.5ms)
+Rendered devise/_registration_items.html.haml (1.4ms)
+Rendered recipes/new.html.haml within layouts/application (15.9ms)
+Completed 200 OK in 103ms (Views: 19.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-02 18:59:16 -0800
+  Processing by RecipesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from block in _app_views_recipes__form_html_haml___2197666514211384227_2157695840__88410033945575408 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:5)
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_recipes__form_html_haml___2197666514211384227_2157695840__88410033945575408 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:1)
+Rendered recipes/_form.html.haml (5.4ms)
+Rendered devise/_login_items.html.haml (2.5ms)
+Rendered devise/_registration_items.html.haml (1.7ms)
+Rendered recipes/new.html.haml within layouts/application (17.5ms)
+Completed 200 OK in 105ms (Views: 21.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-02 19:00:04 -0800
+  Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from block in _app_views_recipes__form_html_haml___2197666514211384227_2174860340__88410033945575408 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:7)
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_recipes__form_html_haml___2197666514211384227_2174860340__88410033945575408 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:2)
+Rendered recipes/_form.html.haml (5.7ms)
+Rendered devise/_login_items.html.haml (1.5ms)
+Rendered devise/_registration_items.html.haml (1.4ms)
+Rendered recipes/new.html.haml within layouts/application (15.9ms)
+Completed 200 OK in 106ms (Views: 19.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-02 19:00:21 -0800
+  Processing by RecipesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered recipes/_form.html.haml (0.6ms)
+Rendered recipes/new.html.haml within layouts/application (2.7ms)
+Completed   in 89ms
+
+ActionView::Template::Error (Invalid filter name ":".):
+    1: 
+    2: - form_for @recipe do |f|
+    3:   = f.label :name
+    4:   :
+    5:   = f.text_field :name
+    6:   %br
+    7:   - f.fields_for :parts do |p|
+  app/views/recipes/_form.html.haml:4
+  app/views/recipes/new.html.haml:3:in `_app_views_recipes_new_html_haml__4447828459553625693_2158386440_4493482825911179709'
+  app/controllers/recipes_controller.rb:32:in `new'
+
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (103.6ms)
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (108.7ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-02 19:00:35 -0800
+  Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+ERROR: compiling _app_views_recipes__form_html_haml___2197666514211384227_2157739940__88410033945575408 RAISED /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:3: syntax error, unexpected ':', expecting ')'
+Function body:           def _app_views_recipes__form_html_haml___2197666514211384227_2157739940__88410033945575408(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "recipes/_form";_old_output_buffer = @output_buffer;form = local_assigns[:form];;begin;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :preserve=>["textarea", "pre", "code"], :attr_wrapper=>"'", :ugly=>false, :format=>:html5, :encoding=>"UTF-8", :escape_html=>true});_erbout = _hamlout.buffer;__in_erb_template = true;;
+_hamlout.append_if_string=  form_for @recipe do |f|;
+_hamlout.push_text("#{_hamlout.format_script_false_false_false_true_false_true_false(( f.label :name :
+));}\n#{_hamlout.format_script_false_false_false_true_false_true_false(( f.text_field :name
+));}\n<br>\n", 0, false);
+_hamlout.append_if_string=  f.fields_for :parts do |p|;
+_hamlout.push_text("#{_hamlout.format_script_false_false_false_true_false_true_false(( p.label :amount
+));}\n#{_hamlout.format_script_false_false_false_true_false_true_false(( p.text_field  :amount
+));}\n", 0, false);end;_hamlout.push_text("#{_hamlout.format_script_false_false_false_true_false_true_false(( f.submit :submit
+));}\n", 0, false);end;::Haml::Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.upper;end;
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_view/template.rb:255:in `module_eval'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_view/template.rb:255:in `compile'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_view/template.rb:134:in `block in render'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activesupport-3.0.0/lib/active_support/notifications.rb:54:in `instrument'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_view/template.rb:127:in `render'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_view/render/partials.rb:294:in `render_partial'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_view/render/partials.rb:223:in `block in render'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_view/render/partials.rb:221:in `render'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_view/render/partials.rb:334:in `_render_partial'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:31:in `render'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/haml-3.0.25/lib/haml/helpers/action_view_mods.rb:11:in `block in render_with_haml'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/haml-3.0.25/lib/haml/helpers.rb:90:in `non_haml'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/haml-3.0.25/lib/haml/helpers/action_view_mods.rb:11:in `render_with_haml'
+/Users/gsturges/Projects/green/app/views/recipes/new.html.haml:3:in `_app_views_recipes_new_html_haml__4447828459553625693_2158231880_4493482825911179709'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_view/template.rb:135:in `block in render'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activesupport-3.0.0/lib/active_support/notifications.rb:54:in `instrument'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_view/template.rb:127:in `render'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:26:in `render'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/haml-3.0.25/lib/haml/helpers/action_view_mods.rb:13:in `render_with_haml'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:92:in `render'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/gsturges/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activerecord-3.0.0/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_controller/metal/mime_responds.rb:261:in `block in retrieve_response_from_mimes'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/Users/gsturges/Projects/green/app/controllers/recipes_controller.rb:32:in `new'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:440:in `_run__1986090757968462582__process_action__2832214339877735178__callbacks'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:119:in `process'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:40:in `process'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_controller/metal.rb:133:in `dispatch'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_controller/metal.rb:173:in `block in action'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `block in call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:82:in `optimized_each'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/haml-3.0.25/lib/sass/plugin/rack.rb:41:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/warden-1.0.3/lib/warden/manager.rb:35:in `block in call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/warden-1.0.3/lib/warden/manager.rb:34:in `catch'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/warden-1.0.3/lib/warden/manager.rb:34:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:12:in `cache'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:31:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/railties-3.0.0/lib/rails/rack/logger.rb:13:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/activesupport-3.0.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/railties-3.0.0/lib/rails/application.rb:168:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/railties-3.0.0/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/Users/gsturges/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/Users/gsturges/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/Users/gsturges/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered recipes/_form.html.haml (1.8ms)
+Rendered recipes/new.html.haml within layouts/application (3.9ms)
+Completed   in 87ms
+
+ActionView::Template::Error (/Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:3: syntax error, unexpected ':', expecting ')'):
+    1: 
+    2: - form_for @recipe do |f|
+    3:   = f.label :name :
+    4:   = f.text_field :name
+    5:   %br
+    6:   - f.fields_for :parts do |p|
+  app/views/recipes/new.html.haml:3:in `_app_views_recipes_new_html_haml__4447828459553625693_2158231880_4493482825911179709'
+  app/controllers/recipes_controller.rb:32:in `new'
+
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (101.6ms)
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (106.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-02 19:00:55 -0800
+  Processing by RecipesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from block in _app_views_recipes__form_html_haml___2197666514211384227_2157739520__88410033945575408 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:7)
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_recipes__form_html_haml___2197666514211384227_2157739520__88410033945575408 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:2)
+Rendered recipes/_form.html.haml (5.7ms)
+Rendered devise/_login_items.html.haml (1.6ms)
+Rendered devise/_registration_items.html.haml (1.5ms)
+Rendered recipes/new.html.haml within layouts/application (16.3ms)
+Completed 200 OK in 103ms (Views: 20.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-02 19:01:03 -0800
+  Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from block in _app_views_recipes__form_html_haml___2197666514211384227_2174980760__88410033945575408 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:6)
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_recipes__form_html_haml___2197666514211384227_2174980760__88410033945575408 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:2)
+Rendered recipes/_form.html.haml (5.3ms)
+Rendered devise/_login_items.html.haml (1.5ms)
+Rendered devise/_registration_items.html.haml (1.4ms)
+Rendered recipes/new.html.haml within layouts/application (15.7ms)
+Completed 200 OK in 101ms (Views: 19.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-02 19:01:16 -0800
+  Processing by RecipesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from block in _app_views_recipes__form_html_haml___2197666514211384227_2158477940__88410033945575408 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:6)
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_recipes__form_html_haml___2197666514211384227_2158477940__88410033945575408 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:2)
+Rendered recipes/_form.html.haml (5.0ms)
+Rendered devise/_login_items.html.haml (1.6ms)
+Rendered devise/_registration_items.html.haml (1.5ms)
+Rendered recipes/new.html.haml within layouts/application (15.7ms)
+Completed 200 OK in 102ms (Views: 19.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-02 19:02:46 -0800
+  Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from block in _app_views_recipes__form_html_haml___2197666514211384227_2175310400__88410033945575408 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:7)
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_recipes__form_html_haml___2197666514211384227_2175310400__88410033945575408 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:2)
+Rendered recipes/_form.html.haml (5.3ms)
+Rendered devise/_login_items.html.haml (1.6ms)
+Rendered devise/_registration_items.html.haml (1.5ms)
+Rendered recipes/new.html.haml within layouts/application (15.5ms)
+Completed 200 OK in 104ms (Views: 19.4ms | ActiveRecord: 0.3ms)
