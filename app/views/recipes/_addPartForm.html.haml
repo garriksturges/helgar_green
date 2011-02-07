@@ -1,3 +1,2 @@
-= form_tag('addPart') do
-  = select_tag 'Amount', options_for_select(["1","2","3","5","6","7","8","9","10"])
-  = submit_tag("Add Ingredient")
+= for @recipe.parts.size do |p|
+  = p.amount

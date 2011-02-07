@@ -1,0 +1,6 @@
+%part
+  - new_or_exisiting = part.new_record? ? 'new': 'existing'
+  - prefix = "project[#{new_or_existing}_task_attributes][]"
+  - fields_for prefix, part do |part_form|
+    Amount:
+    = part_form.text_field :amount

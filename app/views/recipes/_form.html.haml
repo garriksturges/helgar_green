@@ -1,3 +1,6 @@
-= simple_form_for(@recipe) do |f|
-  = f.input :name, :label => "Recipe Name"
-  = f.button :submit
+= form_for @recipe do |f|
+  Name:
+  = f.text_field :name
+  %parts
+  = @parts.each do |p|
+    = p.select(:amount, [['1',1],['2',2]])
