@@ -30,6 +30,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
     @recipe.parts << Part.new
     @parts = @recipe.parts
+    3.times{ @recipe.parts.build}
     respond_to do |format|
       format.html # new.html.erb
     end
