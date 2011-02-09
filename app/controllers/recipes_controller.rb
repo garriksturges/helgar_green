@@ -28,9 +28,7 @@ class RecipesController < ApplicationController
   # GET /recipes/new.xml
   def new
     @recipe = Recipe.new
-    @recipe.parts << Part.new
-    @parts = @recipe.parts
-    3.times{ @recipe.parts.build}
+    3.times{@recipe.parts.build}
     respond_to do |format|
       format.html # new.html.erb
     end
@@ -77,6 +75,13 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(recipes_url) }
+    end
+  end
+  
+  def add_part
+    @part = Part.new
+    respond_to do |format|
+      format.js
     end
   end
 end

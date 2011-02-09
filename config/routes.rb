@@ -1,12 +1,11 @@
 Green::Application.routes.draw do
+  root :to => 'recipes#index'
   devise_for :admins
-
   devise_for :users
+  match ':controller/:action'
   resources :recipes
   resources :parts
   resources :ingredients
-  root :to => 'recipes#index'
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

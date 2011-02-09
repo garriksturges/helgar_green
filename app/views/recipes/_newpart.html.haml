@@ -1,0 +1,9 @@
+= fields_for @part do |p|
+  %tr
+    %td
+      = p.label :amount
+      = p.text_field  :amount
+  %tr
+    %td
+      = p.label :ingredient
+      = p.collection_select :ingredient_id, Ingredient.all, :id, :name
