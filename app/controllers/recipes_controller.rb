@@ -18,7 +18,6 @@ class RecipesController < ApplicationController
   # GET /recipes/1.xml
   def show
     @recipe = Recipe.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
     end
@@ -28,7 +27,7 @@ class RecipesController < ApplicationController
   # GET /recipes/new.xml
   def new
     @recipe = Recipe.new
-    3.times{@recipe.parts.build}
+    2.times{@recipe.parts.build}
     respond_to do |format|
       format.html # new.html.erb
     end
@@ -43,7 +42,7 @@ class RecipesController < ApplicationController
   # POST /recipes.xml
   def create
     @recipe = Recipe.new(params[:recipe])
-
+    @parts = @recipe.parts
     respond_to do |format|
       if @recipe.save
         format.html { redirect_to(@recipe, :notice => 'Recipe was successfully created.') }
@@ -60,7 +59,7 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       if @recipe.update_attributes(params[:recipe])
-        format.html { redirect_to(@recipe, :notice => 'Recipe was successfully updated.') }
+        format.html { redirect_to :action=>"show", :notice => 'Recipe was successfully updated.' }
       else
         format.html { render :action => "edit" }
       end
