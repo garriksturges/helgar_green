@@ -59,7 +59,7 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       if @recipe.update_attributes(params[:recipe])
-        format.html { redirect_to :action=>"show", :notice => 'Recipe was successfully updated.' }
+        format.html { redirect_to @recipe, :notice => 'Recipe was successfully updated.' }
       else
         format.html { render :action => "edit" }
       end

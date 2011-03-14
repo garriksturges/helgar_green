@@ -3,6 +3,7 @@ Green::Application.routes.draw do
   devise_for :admins
   devise_for :users
   match ':controller/ujs/:action'
+  match ':controller/:id/ujs/:action'
   resources :recipes
   resources :parts
   resources :ingredients

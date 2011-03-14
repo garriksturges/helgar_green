@@ -14543,3 +14543,626 @@ Rendered devise/_login_items.html.haml (97.2ms)
 Rendered devise/_registration_items.html.haml (7.0ms)
 Rendered recipes/show.html.haml within layouts/application (569.7ms)
 Completed 200 OK in 615ms (Views: 558.0ms | ActiveRecord: 36.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-02-17 12:44:08 -0800
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes"
+Rendered devise/_login_items.html.haml (2.6ms)
+Rendered devise/_registration_items.html.haml (3.3ms)
+Rendered recipes/index.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 465ms (Views: 90.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-17 12:44:13 -0800
+  Processing by RecipesController#new as HTML
+Completed   in 12ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-02-17 12:44:13 -0800
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/devise-1.1.5/app/views/devise/shared/_links.erb (1.6ms)
+Rendered devise/_login_items.html.haml (3.1ms)
+Rendered devise/_registration_items.html.haml (2.1ms)
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/devise-1.1.5/app/views/devise/sessions/new.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 65ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2011-02-17 12:44:20 -0800
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WBEqklil9/j9ZAHoNtp14zII2XPwVB5bxrYzXZhbdC8=", "user"=>{"email"=>"arf@arf.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."email" = 'arf@arf.com') LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "users" SET "current_sign_in_at" = '2011-02-17 20:44:21.292828', "last_sign_in_at" = '2011-02-16 22:07:29.101492', "sign_in_count" = 13, "updated_at" = '2011-02-17 20:44:21.295770' WHERE ("users"."id" = 1)
+Redirected to http://localhost:3000/recipes/new
+Completed 302 Found in 810ms
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-17 12:44:21 -0800
+  Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mIngredient Load (0.3ms)[0m  SELECT "ingredients".* FROM "ingredients"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_recipes__form_html_haml__114282416_20068960_711627304 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:1)
+Rendered recipes/_form.html.haml (86.8ms)
+Rendered devise/_login_items.html.haml (2.1ms)
+Rendered devise/_registration_items.html.haml (2.1ms)
+Rendered recipes/new.html.haml within layouts/application (119.4ms)
+Completed 200 OK in 260ms (Views: 141.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/recipes/add_part" for 127.0.0.1 at 2011-02-17 12:44:27 -0800
+  Processing by RecipesController#show as JS
+  Parameters: {"id"=>"add_part"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 0) LIMIT 1
+Completed   in 17ms
+
+ActiveRecord::RecordNotFound (Couldn't find Recipe with ID=add_part):
+  app/controllers/recipes_controller.rb:20:in `show'
+
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (242.7ms)
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (284.8ms)
+
+
+Started GET "/ingredients/new" for 127.0.0.1 at 2011-02-17 12:45:13 -0800
+  Processing by IngredientsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered ingredients/_form.html.haml (1459.2ms)
+Rendered devise/_login_items.html.haml (2.0ms)
+Rendered devise/_registration_items.html.haml (31.4ms)
+Rendered ingredients/new.html.haml within layouts/application (1640.2ms)
+Completed 200 OK in 1760ms (Views: 1686.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-17 12:47:33 -0800
+  Processing by RecipesController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mIngredient Load (0.3ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ingredients".* FROM "ingredients"
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_recipes__form_html_haml__114282416_20313730_711627304 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:1)
+Rendered recipes/_form.html.haml (51.8ms)
+Rendered devise/_login_items.html.haml (3.0ms)
+Rendered devise/_registration_items.html.haml (2.3ms)
+Rendered recipes/new.html.haml within layouts/application (74.3ms)
+Completed 200 OK in 200ms (Views: 82.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/recipes/ujs/add_part" for 127.0.0.1 at 2011-02-17 12:47:35 -0800
+  Processing by RecipesController#add_part as JS
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mIngredient Load (0.3ms)[0m  SELECT "ingredients".* FROM "ingredients"
+Rendered recipes/_newpart.html.haml (77.6ms)
+Rendered recipes/add_part.js.erb (95.9ms)
+Completed 200 OK in 173ms (Views: 122.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/recipes/ujs/add_part" for 127.0.0.1 at 2011-02-17 12:47:36 -0800
+  Processing by RecipesController#add_part as JS
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mIngredient Load (0.4ms)[0m  SELECT "ingredients".* FROM "ingredients"
+Rendered recipes/_newpart.html.haml (79.4ms)
+Rendered recipes/add_part.js.erb (81.7ms)
+Completed 200 OK in 140ms (Views: 92.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/recipes/ujs/add_part" for 127.0.0.1 at 2011-02-17 12:47:38 -0800
+  Processing by RecipesController#add_part as JS
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mIngredient Load (0.3ms)[0m  SELECT "ingredients".* FROM "ingredients"
+Rendered recipes/_newpart.html.haml (39.0ms)
+Rendered recipes/add_part.js.erb (41.0ms)
+Completed 200 OK in 182ms (Views: 51.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-17 12:55:15 -0800
+  Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mIngredient Load (0.3ms)[0m  SELECT "ingredients".* FROM "ingredients"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_recipes__form_html_haml__114282416_19027770_711627304 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:1)
+Rendered recipes/_form.html.haml (75.1ms)
+Rendered devise/_login_items.html.haml (2.1ms)
+Rendered devise/_registration_items.html.haml (2.0ms)
+Rendered recipes/new.html.haml within layouts/application (89.5ms)
+Completed 200 OK in 195ms (Views: 95.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-02-17 13:03:35 -0800
+  Processing by RecipesController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mIngredient Load (16.3ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ingredients".* FROM "ingredients"
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_recipes__form_html_haml__114282416_19911380_711627304 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:1)
+Rendered recipes/_form.html.haml (233.9ms)
+Rendered devise/_login_items.html.haml (4.7ms)
+Rendered devise/_registration_items.html.haml (4.5ms)
+Rendered recipes/new.html.haml within layouts/application (262.0ms)
+Completed 200 OK in 506ms (Views: 259.3ms | ActiveRecord: 16.8ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2011-02-17 13:03:42 -0800
+  Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WBEqklil9/j9ZAHoNtp14zII2XPwVB5bxrYzXZhbdC8=", "recipe"=>{"name"=>"garrik test", "parts_attributes"=>{"0"=>{"amount"=>"", "ingredient_id"=>""}, "1"=>{"amount"=>"", "ingredient_id"=>""}}}, "commit"=>"submit"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "recipes" ("created_at", "description", "name", "updated_at", "user_id") VALUES ('2011-02-17 21:03:42.491184', NULL, 'garrik test', '2011-02-17 21:03:42.491184', NULL)
+Redirected to http://localhost:3000/recipes/4
+Completed 302 Found in 234ms
+
+
+Started GET "/recipes/4" for 127.0.0.1 at 2011-02-17 13:03:42 -0800
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecipe Load (0.9ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 4) LIMIT 1[0m
+  [1m[35mPart Load (0.2ms)[0m  SELECT "parts".* FROM "parts" WHERE ("parts".recipe_id = 4)
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered devise/_login_items.html.haml (152.1ms)
+Rendered devise/_registration_items.html.haml (7.3ms)
+Rendered recipes/show.html.haml within layouts/application (214.3ms)
+Completed 200 OK in 329ms (Views: 222.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-02-17 13:03:52 -0800
+  Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (1.7ms)[0m  SELECT "recipes".* FROM "recipes"
+  [1m[36mUser Load (3.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered devise/_login_items.html.haml (222.1ms)
+Rendered devise/_registration_items.html.haml (11.0ms)
+Rendered recipes/index.html.erb within layouts/application (306.4ms)
+Completed 200 OK in 363ms (Views: 325.2ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-02-17 13:15:25 -0800
+  Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (5.2ms)[0m  SELECT "recipes".* FROM "recipes"
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered devise/_login_items.html.haml (86.1ms)
+Rendered devise/_registration_items.html.haml (4.0ms)
+Rendered recipes/index.html.haml within layouts/application (227.6ms)
+Completed 200 OK in 285ms (Views: 245.4ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2011-02-17 13:15:32 -0800
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.6ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 1) LIMIT 1
+  [1m[36mPart Load (0.3ms)[0m  [1mSELECT "parts".* FROM "parts" WHERE ("parts".recipe_id = 1)[0m
+  [1m[35mIngredient Load (0.3ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 1) LIMIT 1
+  [1m[36mIngredient Load (0.7ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 2) LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered devise/_login_items.html.haml (186.2ms)
+Rendered devise/_registration_items.html.haml (14.8ms)
+Rendered recipes/show.html.haml within layouts/application (484.4ms)
+Completed 200 OK in 555ms (Views: 489.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/recipes/1/edit" for 127.0.0.1 at 2011-02-17 13:15:34 -0800
+  Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mRecipe Load (0.6ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 1) LIMIT 1
+  [1m[36mPart Load (0.3ms)[0m  [1mSELECT "parts".* FROM "parts" WHERE ("parts".recipe_id = 1)[0m
+  [1m[35mIngredient Load (0.4ms)[0m  SELECT "ingredients".* FROM "ingredients"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_recipes__form_html_haml__114282416_14675140_711627304 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:1)
+Rendered recipes/_form.html.haml (342.4ms)
+Rendered devise/_login_items.html.haml (3.6ms)
+Rendered devise/_registration_items.html.haml (13.2ms)
+Rendered recipes/edit.html.erb within layouts/application (382.1ms)
+Completed 200 OK in 497ms (Views: 410.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/recipes/1/ujs/add_part" for 127.0.0.1 at 2011-02-17 13:15:39 -0800
+
+ActionController::RoutingError (No route matches "/recipes/1/ujs/add_part"):
+  
+
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (10.3ms)
+
+
+Started GET "/recipes/1/ujs/add_part" for 127.0.0.1 at 2011-02-17 13:15:41 -0800
+
+ActionController::RoutingError (No route matches "/recipes/1/ujs/add_part"):
+  
+
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.2ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-02-17 13:16:35 -0800
+  Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (3.6ms)[0m  SELECT "recipes".* FROM "recipes"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered devise/_login_items.html.haml (283.8ms)
+Rendered devise/_registration_items.html.haml (4.4ms)
+Rendered recipes/index.html.haml within layouts/application (397.5ms)
+Completed 200 OK in 462ms (Views: 424.2ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/recipes/4" for 127.0.0.1 at 2011-02-17 13:16:43 -0800
+  Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WBEqklil9/j9ZAHoNtp14zII2XPwVB5bxrYzXZhbdC8=", "id"=>"4"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mRecipe Load (3.4ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 4) LIMIT 1[0m
+  [1m[35mPart Load (0.3ms)[0m  SELECT "parts".* FROM "parts" WHERE ("parts".recipe_id = 4)
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "recipes" WHERE ("recipes"."id" = 4)[0m
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 369ms
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-02-17 13:16:43 -0800
+  Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (1.5ms)[0m  SELECT "recipes".* FROM "recipes"
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered devise/_login_items.html.haml (117.0ms)
+Rendered devise/_registration_items.html.haml (2.7ms)
+Rendered recipes/index.html.haml within layouts/application (276.3ms)
+Completed 200 OK in 331ms (Views: 289.0ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/recipes/2/edit" for 127.0.0.1 at 2011-02-17 13:17:05 -0800
+  Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mRecipe Load (0.6ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 2) LIMIT 1[0m
+  [1m[35mPart Load (0.3ms)[0m  SELECT "parts".* FROM "parts" WHERE ("parts".recipe_id = 2)
+  [1m[36mIngredient Load (0.3ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ingredients".* FROM "ingredients"
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_recipes__form_html_haml__114282416_19884060_711627304 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:1)
+Rendered recipes/_form.html.haml (273.8ms)
+Rendered devise/_login_items.html.haml (14.5ms)
+Rendered devise/_registration_items.html.haml (3.5ms)
+Rendered recipes/edit.html.erb within layouts/application (310.0ms)
+Completed 200 OK in 482ms (Views: 315.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/recipes/2/edit" for 127.0.0.1 at 2011-02-17 13:19:05 -0800
+  Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mRecipe Load (13.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 2) LIMIT 1
+  [1m[36mPart Load (1.8ms)[0m  [1mSELECT "parts".* FROM "parts" WHERE ("parts".recipe_id = 2)[0m
+  [1m[35mIngredient Load (0.3ms)[0m  SELECT "ingredients".* FROM "ingredients"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_recipes__form_html_haml__114282416_19040400_711627304 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:1)
+Rendered recipes/_form.html.haml (262.9ms)
+Rendered devise/_login_items.html.haml (2.7ms)
+Rendered devise/_registration_items.html.haml (4.7ms)
+Rendered recipes/edit.html.haml within layouts/application (337.6ms)
+Completed 200 OK in 511ms (Views: 343.5ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/recipes/2/ujs/add_part" for 127.0.0.1 at 2011-02-17 13:19:08 -0800
+
+ActionController::RoutingError (No route matches "/recipes/2/ujs/add_part"):
+  
+
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (15.5ms)
+
+
+Started GET "/recipes/2/edit" for 127.0.0.1 at 2011-02-17 13:22:59 -0800
+  Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mRecipe Load (0.6ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 2) LIMIT 1[0m
+  [1m[35mPart Load (0.6ms)[0m  SELECT "parts".* FROM "parts" WHERE ("parts".recipe_id = 2)
+  [1m[36mIngredient Load (0.3ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ingredients".* FROM "ingredients"
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_recipes__form_html_haml__114282416_18892800_711627304 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:1)
+Rendered recipes/_form.html.haml (585.1ms)
+Rendered devise/_login_items.html.haml (8.3ms)
+Rendered devise/_registration_items.html.haml (6.4ms)
+Rendered recipes/edit.html.haml within layouts/application (666.5ms)
+Completed 200 OK in 866ms (Views: 674.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/recipes/2/edit" for 127.0.0.1 at 2011-02-17 13:23:25 -0800
+  Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (5.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mRecipe Load (0.6ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 2) LIMIT 1
+  [1m[36mPart Load (0.4ms)[0m  [1mSELECT "parts".* FROM "parts" WHERE ("parts".recipe_id = 2)[0m
+  [1m[35mIngredient Load (0.4ms)[0m  SELECT "ingredients".* FROM "ingredients"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_recipes__form_html_haml__114282416_20329330_711627304 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:1)
+Rendered recipes/_form.html.haml (336.5ms)
+Rendered devise/_login_items.html.haml (2.6ms)
+Rendered devise/_registration_items.html.haml (5.3ms)
+Rendered recipes/edit.html.haml within layouts/application (367.1ms)
+Completed 200 OK in 627ms (Views: 400.2ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/recipes/2/" for 127.0.0.1 at 2011-02-17 13:25:26 -0800
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mRecipe Load (0.5ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 2) LIMIT 1
+  [1m[36mPart Load (0.3ms)[0m  [1mSELECT "parts".* FROM "parts" WHERE ("parts".recipe_id = 2)[0m
+  [1m[35mIngredient Load (0.2ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 1) LIMIT 1
+  [1m[36mIngredient Load (8.3ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 2) LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered devise/_login_items.html.haml (213.1ms)
+Rendered devise/_registration_items.html.haml (3.9ms)
+Rendered recipes/show.html.haml within layouts/application (486.0ms)
+Completed 200 OK in 533ms (Views: 484.6ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/recipes/2/edit" for 127.0.0.1 at 2011-02-17 13:25:29 -0800
+  Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mRecipe Load (0.7ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 2) LIMIT 1
+  [1m[36mPart Load (0.3ms)[0m  [1mSELECT "parts".* FROM "parts" WHERE ("parts".recipe_id = 2)[0m
+  [1m[35mIngredient Load (0.3ms)[0m  SELECT "ingredients".* FROM "ingredients"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_recipes__form_html_haml__114282416_20121530_711627304 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:1)
+Rendered recipes/_form.html.haml (332.3ms)
+Rendered devise/_login_items.html.haml (4.0ms)
+Rendered devise/_registration_items.html.haml (7.6ms)
+Rendered recipes/edit.html.haml within layouts/application (371.8ms)
+Completed 200 OK in 599ms (Views: 390.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/recipes/2/ujs/add_part" for 127.0.0.1 at 2011-02-17 13:25:32 -0800
+
+ActionController::RoutingError (No route matches "/recipes/2/ujs/add_part"):
+  
+
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/recipes/2/edit" for 127.0.0.1 at 2011-02-17 13:25:48 -0800
+  Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+Completed   in 21ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-02-17 13:25:48 -0800
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/devise-1.1.5/app/views/devise/shared/_links.erb (1.8ms)
+Rendered devise/_login_items.html.haml (3.9ms)
+Rendered devise/_registration_items.html.haml (3.4ms)
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/devise-1.1.5/app/views/devise/sessions/new.html.erb within layouts/application (49.4ms)
+Completed 200 OK in 100ms (Views: 62.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2011-02-17 13:25:53 -0800
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RKvQc80/sWi8YUYCAMIsz3yLG2H05drJOZheYgKzzJQ=", "user"=>{"email"=>"arf@arf.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = 'arf@arf.com') LIMIT 1
+  [1m[36mSQL (1.2ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2011-02-17 21:25:53.801720', "last_sign_in_at" = '2011-02-17 20:44:21.292828', "sign_in_count" = 14, "updated_at" = '2011-02-17 21:25:53.802198' WHERE ("users"."id" = 1)[0m
+Redirected to http://localhost:3000/recipes/2/edit
+Completed 302 Found in 493ms
+
+
+Started GET "/recipes/2/edit" for 127.0.0.1 at 2011-02-17 13:25:53 -0800
+  Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mRecipe Load (0.7ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 2) LIMIT 1[0m
+  [1m[35mPart Load (0.3ms)[0m  SELECT "parts".* FROM "parts" WHERE ("parts".recipe_id = 2)
+  [1m[36mIngredient Load (0.3ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ingredients".* FROM "ingredients"
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_recipes__form_html_haml__114282416_20127420_711627304 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:1)
+Rendered recipes/_form.html.haml (357.7ms)
+Rendered devise/_login_items.html.haml (3.4ms)
+Rendered devise/_registration_items.html.haml (2.4ms)
+Rendered recipes/edit.html.haml within layouts/application (398.2ms)
+Completed 200 OK in 594ms (Views: 407.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/recipes/2/ujs/add_part" for 127.0.0.1 at 2011-02-17 13:30:10 -0800
+
+ActionController::RoutingError (No route matches "/recipes/2/ujs/add_part"):
+  
+
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (11.5ms)
+
+
+Started GET "/recipes/2/edit" for 127.0.0.1 at 2011-02-17 13:32:50 -0800
+  Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mRecipe Load (0.5ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 2) LIMIT 1
+  [1m[36mPart Load (0.3ms)[0m  [1mSELECT "parts".* FROM "parts" WHERE ("parts".recipe_id = 2)[0m
+  [1m[35mIngredient Load (0.3ms)[0m  SELECT "ingredients".* FROM "ingredients"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_recipes__form_html_haml__114282416_4179550_711627304 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:1)
+Rendered recipes/_form.html.haml (492.8ms)
+Rendered devise/_login_items.html.haml (3.7ms)
+Rendered devise/_registration_items.html.haml (13.1ms)
+Rendered recipes/edit.html.haml within layouts/application (556.8ms)
+Completed 200 OK in 680ms (Views: 562.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/recipes/2/ujs/add_part" for 127.0.0.1 at 2011-02-17 13:32:55 -0800
+  Processing by RecipesController#add_part as JS
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mIngredient Load (1.1ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+Rendered recipes/_newpart.html.haml (146.3ms)
+Rendered recipes/add_part.js.erb (151.4ms)
+Completed 200 OK in 251ms (Views: 168.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/recipes/2" for 127.0.0.1 at 2011-02-17 13:32:58 -0800
+  Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RKvQc80/sWi8YUYCAMIsz3yLG2H05drJOZheYgKzzJQ=", "recipe"=>{"name"=>"another test", "parts_attributes"=>{"0"=>{"amount"=>"2", "ingredient_id"=>"1", "id"=>"3"}, "1"=>{"amount"=>"3", "ingredient_id"=>"2", "id"=>"4"}}}, "part"=>{"amount"=>"", "ingredient_id"=>""}, "commit"=>"submit", "id"=>"2"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mRecipe Load (0.6ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 2) LIMIT 1[0m
+  [1m[35mPart Load (0.3ms)[0m  SELECT "parts".* FROM "parts" WHERE ("parts".recipe_id = 2) AND ("parts"."id" IN (3, 4))
+Redirected to http://localhost:3000/recipes/ujs/show?notice=Recipe+was+successfully+updated.
+Completed 302 Found in 602ms
+
+
+Started GET "/recipes/ujs/show?notice=Recipe+was+successfully+updated." for 127.0.0.1 at 2011-02-17 13:32:59 -0800
+  Processing by RecipesController#show as HTML
+  Parameters: {"notice"=>"Recipe was successfully updated."}
+Completed   in 103ms
+
+ActiveRecord::RecordNotFound (Couldn't find Recipe without an ID):
+  app/controllers/recipes_controller.rb:20:in `show'
+
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (11.7ms)
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (666.3ms)
+Rendered /Users/gsturges/.rvm/gems/ruby-1.9.2-p136@green/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (716.1ms)
+
+
+Started GET "/recipes/2/ujs/add_part" for 127.0.0.1 at 2011-02-17 13:35:44 -0800
+  Processing by RecipesController#add_part as JS
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mIngredient Load (2.2ms)[0m  SELECT "ingredients".* FROM "ingredients"
+Rendered recipes/_newpart.html.haml (123.1ms)
+Rendered recipes/add_part.js.erb (125.2ms)
+Completed 200 OK in 321ms (Views: 162.3ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/recipes/2" for 127.0.0.1 at 2011-02-17 13:35:46 -0800
+  Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RKvQc80/sWi8YUYCAMIsz3yLG2H05drJOZheYgKzzJQ=", "recipe"=>{"name"=>"another test", "parts_attributes"=>{"0"=>{"amount"=>"2", "ingredient_id"=>"1", "id"=>"3"}, "1"=>{"amount"=>"3", "ingredient_id"=>"2", "id"=>"4"}}}, "part"=>{"amount"=>"", "ingredient_id"=>""}, "commit"=>"submit", "id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mRecipe Load (4.3ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 2) LIMIT 1
+  [1m[36mPart Load (0.4ms)[0m  [1mSELECT "parts".* FROM "parts" WHERE ("parts".recipe_id = 2) AND ("parts"."id" IN (3, 4))[0m
+Redirected to http://localhost:3000/recipes/2
+Completed 302 Found in 302ms
+
+
+Started GET "/recipes/2" for 127.0.0.1 at 2011-02-17 13:35:47 -0800
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mRecipe Load (12.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 2) LIMIT 1
+  [1m[36mPart Load (0.4ms)[0m  [1mSELECT "parts".* FROM "parts" WHERE ("parts".recipe_id = 2)[0m
+  [1m[35mIngredient Load (0.2ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 1) LIMIT 1
+  [1m[36mIngredient Load (0.3ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 2) LIMIT 1[0m
+  [1m[35mUser Load (11.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered devise/_login_items.html.haml (135.9ms)
+Rendered devise/_registration_items.html.haml (3.0ms)
+Rendered recipes/show.html.haml within layouts/application (472.7ms)
+Completed 200 OK in 571ms (Views: 486.6ms | ActiveRecord: 29.5ms)
+
+
+Started GET "/recipes/2/edit" for 127.0.0.1 at 2011-02-17 13:35:57 -0800
+  Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mRecipe Load (0.7ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 2) LIMIT 1
+  [1m[36mPart Load (9.0ms)[0m  [1mSELECT "parts".* FROM "parts" WHERE ("parts".recipe_id = 2)[0m
+  [1m[35mIngredient Load (0.3ms)[0m  SELECT "ingredients".* FROM "ingredients"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_recipes__form_html_haml__114282416_18941570_711627304 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:1)
+Rendered recipes/_form.html.haml (358.0ms)
+Rendered devise/_login_items.html.haml (2.5ms)
+Rendered devise/_registration_items.html.haml (11.7ms)
+Rendered recipes/edit.html.haml within layouts/application (435.4ms)
+Completed 200 OK in 628ms (Views: 462.4ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/recipes/2/ujs/add_part" for 127.0.0.1 at 2011-02-17 13:43:27 -0800
+  Processing by RecipesController#add_part as JS
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mIngredient Load (0.3ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+Rendered recipes/_newpart.html.haml (224.3ms)
+Rendered recipes/add_part.js.erb (226.3ms)
+Completed 200 OK in 378ms (Views: 244.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/recipes/2" for 127.0.0.1 at 2011-02-17 13:43:31 -0800
+  Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RKvQc80/sWi8YUYCAMIsz3yLG2H05drJOZheYgKzzJQ=", "recipe"=>{"name"=>"another test", "parts_attributes"=>{"0"=>{"amount"=>"2", "ingredient_id"=>"1", "id"=>"3"}, "1"=>{"amount"=>"3", "ingredient_id"=>"2", "id"=>"4"}}}, "part"=>{"amount"=>"", "ingredient_id"=>"1"}, "commit"=>"submit", "id"=>"2"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mRecipe Load (0.6ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 2) LIMIT 1[0m
+  [1m[35mPart Load (0.3ms)[0m  SELECT "parts".* FROM "parts" WHERE ("parts".recipe_id = 2) AND ("parts"."id" IN (3, 4))
+Redirected to http://localhost:3000/recipes/2
+Completed 302 Found in 333ms
+
+
+Started GET "/recipes/2" for 127.0.0.1 at 2011-02-17 13:43:32 -0800
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.9ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 2) LIMIT 1[0m
+  [1m[35mPart Load (0.4ms)[0m  SELECT "parts".* FROM "parts" WHERE ("parts".recipe_id = 2)
+  [1m[36mIngredient Load (0.5ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 1) LIMIT 1[0m
+  [1m[35mIngredient Load (0.3ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 2) LIMIT 1
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered devise/_login_items.html.haml (188.4ms)
+Rendered devise/_registration_items.html.haml (2.5ms)
+Rendered recipes/show.html.haml within layouts/application (491.0ms)
+Completed 200 OK in 549ms (Views: 503.4ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/recipes/2/edit" for 127.0.0.1 at 2011-02-17 13:43:37 -0800
+  Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mRecipe Load (0.6ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 2) LIMIT 1[0m
+  [1m[35mPart Load (0.4ms)[0m  SELECT "parts".* FROM "parts" WHERE ("parts".recipe_id = 2)
+  [1m[36mIngredient Load (0.3ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ingredients".* FROM "ingredients"
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_recipes__form_html_haml__114282416_20073790_711627304 at /Users/gsturges/Projects/green/app/views/recipes/_form.html.haml:1)
+Rendered recipes/_form.html.haml (316.0ms)
+Rendered devise/_login_items.html.haml (10.9ms)
+Rendered devise/_registration_items.html.haml (18.3ms)
+Rendered recipes/edit.html.haml within layouts/application (401.4ms)
+Completed 200 OK in 681ms (Views: 432.7ms | ActiveRecord: 2.0ms)
+  [1m[36mSQL (1.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateIngredients (20101021214250)
+Migrating to CreateParts (20101021214413)
+Migrating to CreateRecipes (20101021214423)
+Migrating to DeviseCreateUsers (20101022220101)
+Migrating to DeviseCreateAdmins (20101026014105)
+Migrating to CreateComments (20110218000024)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (26.6ms)[0m  [1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "posting" text, "rank" integer, "recipe_id" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110218000024')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("admins")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_admins_on_reset_password_token')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_admins_on_email')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("comments")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("ingredients")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("parts")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("recipes")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_reset_password_token')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+  [1m[36mSQL (1.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateIngredients (20101021214250)
+Migrating to CreateParts (20101021214413)
+Migrating to CreateRecipes (20101021214423)
+Migrating to DeviseCreateUsers (20101022220101)
+Migrating to DeviseCreateAdmins (20101026014105)
+Migrating to CreateComments (20110218000024)
+Migrating to AddScreenNameToUser (20110218003416)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.4ms)[0m  [1mALTER TABLE "user" ADD "screen_name" varchar(255)[0m
+SQLite3::SQLException: no such table: user: ALTER TABLE "user" ADD "screen_name" varchar(255)
+  [1m[36mSQL (1.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 1) LIMIT 1

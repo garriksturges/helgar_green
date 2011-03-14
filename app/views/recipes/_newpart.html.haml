@@ -6,5 +6,3 @@
     %td
       = p.label :ingredient
       = p.collection_select :ingredient_id, Ingredient.all, :id, :name , { :include_blank => true }
-
-%h1 HI THERE
